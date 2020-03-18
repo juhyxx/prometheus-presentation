@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			img {
+				border:0!important;
+				box-shadow: none!important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section><h1>Functions in Prometheus</h1></section>
+				<section>Motivation</section>
+				<section>
+					<section><h1>Monoticity</h1></section>
+					<section><img src="img/mono1.svg"></section>
+					<section><img src="img/mono2.svg"></section>
+					<section><img src="img/mono3.svg"></section>
+					<section><img src="img/mono4.svg"></section>
+				</section>
+				<section>
+					<section><h1>Playground</h1></section>
+					<section><img src="img/playground.svg"></section>
+				</section>
+				<section>
+					<section><h1>Gauge</h1></section>
+					<section><h2>Gauge</h2><img src="img/gauge1.svg"></section>
+					<section><h2>delta</h2>difference between the first and last value of each time series</section>
+					
+					<section><h2>delta</h2><img src="img/gauge2.svg"></section>
+					<section><h2>delta</h2><img src="img/gauge3.svg"></section>
+					<section><h2>delta</h2><img src="img/gauge4.svg"></section>
+					<section><h2>delta</h2><img src="img/gauge4.svg"></section>
+					<section><h2>delta</h2><img src="img/gauge5.svg"></section>
+					<section><h2>idelta</h2>calculates the difference between the last two samples</section>
+					<section><h2>idelta</h2<img src="img/gauge6.svg"></section>
+		
+				</section>
+				<section>
+					<section><h1>Counter</h1></section>
+					<section><img src="img/counter1.svg"></section>
+					<section><h2>rate</h2>calculates the per-second average rate of increase of the time series in the range vector.<br> Breaks in monotonicity</section>
+					
+
+
+					<section><h2>rate</h2><img src="img/counter2.svg"></section>
+					<section><h2>irate</h2>calculates the per-second instant rate of increase of the time series in the range vector. This is based on the last two data points. Breaks in monotonicity</section>
+					<section><h2>irate</h2><img src="img/counter3.svg"></section>
+					<section><h2>increase</h2>calculates the increase in the time series in the range vector.<br>Breaks in monotonicity</section>
+					<section><h2>increase 2</h2>it is syntactic sugar for rate(v) multiplied by the number of seconds </section>
+					
+					<section><h2>increase</h2><img src="img/counter4.svg"></section>
+				</section>
+				<section>
+					<h1>End.</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.configure({ backgroundTransition: 'zoom' })
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
