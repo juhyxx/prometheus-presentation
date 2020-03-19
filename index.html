@@ -47,15 +47,15 @@
 				<section>
 					<section><h1>Playground</h1><img src="img/playground0.svg"></section>
 					<section><img src="img/playground.svg"></section>
+					<section><img src="img/playground1.svg"></section>
 				</section>
 				<section>
 					<section><h1>Gauge</h1><img src="img/gauge0.svg"></section>
 					<section><h2>Gauge</h2><img src="img/gauge1.svg"></section>
-					<section><h2>delta</h2>difference between the first and last value of each time series</section>
+					<section><h2>delta</h2>difference between the first and last value</section>
 					
 					<section><h2>delta</h2><img src="img/gauge2.svg"></section>
 					<section><h2>delta</h2><img src="img/gauge3.svg"></section>
-					<section><h2>delta</h2><img src="img/gauge4.svg"></section>
 					<section><h2>delta</h2><img src="img/gauge4.svg"></section>
 					<section><h2>delta</h2><img src="img/gauge5.svg"></section>
 					<section><h2>idelta</h2>calculates the difference between the last two samples</section>
@@ -65,16 +65,31 @@
 				<section>
 					<section><h1>Counter</h1><img src="img/counter0.svg"></section>
 					<section><img src="img/counter1.svg"></section>
-					<section><h2>rate</h2>calculates the <b>per-second</b> average rate of increase of the time series in the range vector.<br> Breaks in monotonicity</section>
+					<section>
+						<h2>rate</h2>
+						<ul>
+							<li class="fragment fade-left">The <b>per-second</b> average rate of increase.</li>
+							<li class="fragment fade-left">Breaks in monotonicity</li>
+						</ul>
+					</section>
 					<section><h2>rate</h2><img src="img/counter2.svg"></section>
-					<section><h2>Why rate?</h2>Why not <b>delta?</b></section>
-
-					<section><h2>irate</h2>calculates the per-second instant rate of increase of the time series in the range vector. This is based on the last two data points. Breaks in monotonicity</section>
+					<section>
+						<h2>irate</h2>
+						<ul>
+							<li class="fragment fade-left">The per-second instant rate of increase</li>
+							<li class="fragment fade-left">Based on the last two data points. </li>
+							<li class="fragment fade-left">Breaks in monotonicity</li>
+						</ul>
+					</section>
 					<section><h2>irate</h2><img src="img/counter3.svg"></section>
-					<section><h2>increase</h2>calculates the increase in the time series in the range vector.<br>Breaks in monotonicity</section>
-					<section><h2>increase 2</h2>it is syntactic sugar for rate(v) multiplied by the number of seconds </section>
+					<section>
+						<h2>increase</h2>
+						<ul>
+							<li class="fragment fade-left">calculates the increase in the time series in the range vector.</li>
+							<li class="fragment fade-left">Breaks in monotonicity</li>
+							<li class="fragment fade-left">syntactic sugar for <b>rate</b> multiplied by the number of seconds</li>
+					</section>
 					
-					<section><h2>increase</h2><img src="img/counter4.svg"></section>
 				</section>
 				<section>
 					<h1><img src="img/end.svg"></h1>
